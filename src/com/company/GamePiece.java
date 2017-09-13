@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 public class GamePiece {
 
     private int positionX;
@@ -10,19 +12,21 @@ public class GamePiece {
 
 
 
-    public GamePiece(int positionX, int positionY, boolean frozen, String name, String color) {
-        this.positionX = positionX;
-        this.positionY = positionY;
-        this.frozen = frozen;
-        this.name = name;
-        this.color = color;
+    public GamePiece() {
+        this.positionX = 0;
+        this.positionY = 0;
+        this.frozen = false;
+        this.name = "name";
+        this.color = "color";
     }
 
 
-    public void move(){
+    public void move(int newX, int newY){
         if(frozen == false) {
-            positionX = 1;
-            positionY = 3;
+//            newX = ThreadLocalRandom.current().nextInt(1, 100+1);
+//            newY = ThreadLocalRandom.current().nextInt(1, 100+1);
+            positionX = newX;
+            positionY = newY;
         }
     }
 
